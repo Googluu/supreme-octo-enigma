@@ -1,9 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   getHello(): string {
@@ -18,5 +19,15 @@ export class AppController {
   @Get('/ruta/')
   hi() {
     return 'con /sass/';
+  }
+
+  @Get('products/:id')
+  getProduct(@Param('id') id: string) {
+    return `product ${id}`;
+  }
+
+  @Get('categories/:categoryId/products/:id')
+  getCategory(@Param('id') id: string, @Param('categoryId') categoryId: string) {
+    return `product ${id} and ${categoryId}`;
   }
 }
