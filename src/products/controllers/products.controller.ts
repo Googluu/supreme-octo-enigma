@@ -10,6 +10,7 @@ import {
   HttpStatus,
   HttpCode,
   Res,
+  ParseIntPipe,
 } from '@nestjs/common';
 
 import { Response } from 'express';
@@ -43,11 +44,11 @@ export class ProductsController {
   // forma de express
   @Get(':id')
   @HttpCode(HttpStatus.ACCEPTED)
-  getOne(@Param('id') id: string) {
+  getOne(@Param('id', ParseIntPipe) id: number) {
     // response.status(200).send({
     //   message: `product ${id}`,
     // });
-    return this.productsService.findOne(+id);
+    return this.productsService.findOne(id);
   }
 
   @Post()
