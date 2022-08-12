@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { Product } from '../entities/product-entity';
 
@@ -22,8 +22,12 @@ export class ProductsService {
   }
 
   findOne(id: number) {
-    return  this.products.find((item) => item.id === id);
+    const product = this.products.find((item) => item.id === id);
+    if (!product) {
+      throw new NotFoundException(`Product #${id} not found`);
   }
+  return product;
+}
 
   create(payload: any) {
     this.counterId = this.counterId + 1;
@@ -51,7 +55,7 @@ export class ProductsService {
   remove(id: number) {
     const index = this.products.findIndex((item) => item.id === id);
     if (index === -1) {
-      throw new Error(`Product #${id} not found`);
+      throw new NotFoundException(`Product #${id} not found`);
     }
     this.products.splice(index, 1);
     return true;

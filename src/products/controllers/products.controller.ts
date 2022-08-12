@@ -69,10 +69,10 @@ export class ProductsController {
   }
 
   @Delete(':id')
-  delete(@Param() id: number) {
+  delete(@Param('id') id: string) {
     // return {
     //   id,
     // };
-    return this.productsService.remove(id);
+    return this.productsService.remove(+id);
   }
 }
