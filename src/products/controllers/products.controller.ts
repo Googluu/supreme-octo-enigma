@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Controller,
   Get,
@@ -43,7 +44,6 @@ export class ProductsController {
     };
   }
 
-  // forma de express
   @Get(':id')
   @HttpCode(HttpStatus.ACCEPTED)
   getOne(@Param('id', ParseInitPipe) id: number) {
