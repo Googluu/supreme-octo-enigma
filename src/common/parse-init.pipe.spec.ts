@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ParseInitPipe } from './parse-init.pipe';
 
 describe('ParseInitPipe', () => {
