@@ -7,6 +7,6 @@ export default registerAs('config', () => {
       name: process.env.DATABASE_NAME,
       port: process.env.DATABASE_PORT,
     },
-    apikey: process.env.API_KEY
+    apikey: process.env.API_KEY,
   };
 });

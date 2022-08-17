@@ -6,4 +6,4 @@ export class Product {
   price: number;
   stock: number;
   image: string;
-};
+}

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { IsString, IsNotEmpty, Length, IsEmail } from 'class-validator';
-import { PartialType, ApiProperty  } from "@nestjs/swagger";
+import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDto {
   @IsString()
@@ -20,4 +20,3 @@ export class CreateUserDto {
 }
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {}
-

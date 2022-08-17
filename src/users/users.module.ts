@@ -10,6 +10,6 @@ import { ProductsModule } from '../products/products.module';
 @Module({
   imports: [ProductsModule],
   controllers: [UsersController, CustomersController],
-  providers: [UsersService, CustomersService]
+  providers: [UsersService, CustomersService],
 })
-export class UsersModule { }
+export class UsersModule {}

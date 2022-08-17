@@ -12,7 +12,7 @@ export class ProductsService {
       id: 1,
       name: 'Product 1',
       description: 'Product 1 description',
-      price:  123,
+      price: 123,
       stock: 2,
       image: 'http://www.example.com/image.jpg',
     },
@@ -26,9 +26,9 @@ export class ProductsService {
     const product = this.products.find((item) => item.id === id);
     if (!product) {
       throw new NotFoundException(`Product #${id} not found`);
+    }
+    return product;
   }
-  return product;
-}
 
   create(payload: CreateProductDto) {
     console.log(payload);

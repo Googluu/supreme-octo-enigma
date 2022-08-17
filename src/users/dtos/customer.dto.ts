@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { IsString, IsNotEmpty, IsPhoneNumber } from "class-validator";
-import { PartialType, ApiProperty } from "@nestjs/swagger";
+import { IsString, IsNotEmpty, IsPhoneNumber } from 'class-validator';
+import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateCustomerDto {
   @ApiProperty()

@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-const myName = "name";
+const myName = 'name';
 const myAge = 17;
 const sum = (a: number, b: number) => {
-  return a + b
-}
+  return a + b;
+};
 sum(12, 23);
 
 class Persona {

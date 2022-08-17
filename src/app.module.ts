@@ -27,7 +27,7 @@ import config from './config';
     HttpModule,
     ProductsModule,
     UsersModule,
-    DatabaseModule
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [
@@ -36,12 +36,13 @@ import config from './config';
       // tiene las caracteristicas de ser asicrono y de recibir inyeccion de dependecias
       provide: 'TASKS',
       useFactory: async (http: HttpService) => {
-        const tasks = await http.get('https://jsonplaceholder.typicode.com/todos')
-          .toPromise()
+        const tasks = await http
+          .get('https://jsonplaceholder.typicode.com/todos')
+          .toPromise();
         return tasks.data;
       },
       inject: [HttpService],
-    }
+    },
   ],
 })
-export class AppModule { }
+export class AppModule {}
