@@ -28,7 +28,6 @@ export class UsersController {
     return this.usersService.findOne(id);
   }
 
-  // con base al id de un usruario me traiga las ordenes de compra de sus productos
   @Get(':id/orders')
   getOrders(@Param('id', ParseIntPipe) id: number) {
     return this.usersService.getOrderByUser(id);

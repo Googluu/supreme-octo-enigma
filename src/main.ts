@@ -8,19 +8,18 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // lo ignora quitar del payload todos los atributos que no esten definidos en el dtos
-      forbidNonWhitelisted: true, // con este no lo ingnora le pega su error para que envie lso datos good
+      whitelist: true,
+      forbidNonWhitelisted: true,
     }),
   );
   const config = new DocumentBuilder()
     .setTitle('API')
     .setDescription('ecommerce')
     .setVersion('1.0')
-    // .addTag('cats')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
-  app.enableCors(); // ya puede ser consultada desde cualquier aplicacion fuera del dominio
+  app.enableCors();
   await app.listen(process.env.PORT || 3000);
 }
 bootstrap();

@@ -6,7 +6,7 @@ import { Product } from '../entities/product-entity';
 
 @Injectable()
 export class ProductsService {
-  private counterId = 1; // the autoincrementador id
+  private counterId = 1;
   private products: Product[] = [
     {
       id: 1,
