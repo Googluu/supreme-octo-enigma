@@ -1,8 +1,8 @@
 {
   "name": "store-techin-nest_platzi",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "app de comercio products, categories, brands etc..",
+  "author": "sneyder rodriguez",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
