@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: my_db_ecommerce
+      POSTGRES_USER: root_techin
+      POSTGRES_PASSWORD: pass_123_admin
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data_ecommerce:/var/lib/postgresql/data

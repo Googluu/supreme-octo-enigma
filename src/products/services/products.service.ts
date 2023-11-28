@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { CreateProductDto, UpdateProductDto } from '../dtos/products.dtos';
